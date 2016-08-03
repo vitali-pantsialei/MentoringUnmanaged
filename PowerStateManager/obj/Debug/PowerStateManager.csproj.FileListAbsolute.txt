@@ -1,0 +1,5 @@
+D:\Vitali_Pantsialei\Mentoring\MentoringUnmanaged\PowerStateManager\bin\Debug\PowerStateManager.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringUnmanaged\PowerStateManager\bin\Debug\PowerStateManager.pdb
+D:\Vitali_Pantsialei\Mentoring\MentoringUnmanaged\PowerStateManager\obj\Debug\PowerStateManager.csprojResolveAssemblyReference.cache
+D:\Vitali_Pantsialei\Mentoring\MentoringUnmanaged\PowerStateManager\obj\Debug\PowerStateManager.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringUnmanaged\PowerStateManager\obj\Debug\PowerStateManager.pdb

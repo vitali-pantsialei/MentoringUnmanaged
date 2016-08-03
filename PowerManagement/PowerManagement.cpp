@@ -1,6 +1,8 @@
 #include <windows.h>
 #include <powrprof.h>
 
+#pragma comment(lib, "PowrProf.lib")
+
 typedef struct _SYSTEM_POWER_INFORMATION {
 	ULONG MaxIdlenessAllowed;
 	ULONG Idleness;
@@ -8,6 +10,7 @@ typedef struct _SYSTEM_POWER_INFORMATION {
 	UCHAR CoolingMode;
 } SYSTEM_POWER_INFORMATION, *PSYSTEM_POWER_INFORMATION;
 
+_declspec(dllexport)
 ULONGLONG GetLastSleepTime()
 {
 	ULONGLONG result;
@@ -15,6 +18,7 @@ ULONGLONG GetLastSleepTime()
 	return result;
 }
 
+_declspec(dllexport)
 ULONGLONG GetLastWakeTime()
 {
 	ULONGLONG result;
@@ -22,31 +26,32 @@ ULONGLONG GetLastWakeTime()
 	return result;
 }
 
-SYSTEM_BATTERY_STATE GetBatteryState()
+_declspec(dllexport)
+void GetBatteryState(SYSTEM_BATTERY_STATE result)
 {
-	SYSTEM_BATTERY_STATE result;
 	CallNtPowerInformation(SystemBatteryState, NULL, 0, &result, sizeof(result));
-	return result;
 }
 
-SYSTEM_POWER_INFORMATION GetPowerInformation()
+_declspec(dllexport)
+void GetPowerInformation(SYSTEM_POWER_INFORMATION result)
 {
-	SYSTEM_POWER_INFORMATION result;
 	CallNtPowerInformation(SystemPowerInformation, NULL, 0, &result, sizeof(result));
-	return result;
 }
 
+_declspec(dllexport)
 void ReserveHiberFile(bool reserve)
 {
 	CallNtPowerInformation(SystemReserveHiberFile, &reserve, sizeof(reserve), NULL, 0);
 }
 
+_declspec(dllexport)
 int SuspendSystem()
 {
-	return SetSuspendState(false, false, false);
+	return SetSuspendState(FALSE, FALSE, FALSE);
 }
 
+_declspec(dllexport)
 int HibernateSystem()
 {
-	return SetSuspendState(true, false, false);
+	return SetSuspendState(TRUE, FALSE, FALSE);
 }
