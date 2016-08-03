@@ -12,8 +12,8 @@ namespace PowerStateManager
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface IPowerState
     {
-        long GetLastSleepTime();
-        long GetLastWakeTime();
+        int GetLastSleepTime();
+        int GetLastWakeTime();
         void GetBatteryState(out SYSTEM_BATTERY_STATE result);
         void GetPowerInformation(out SYSTEM_POWER_INFORMATION result);
         void ReserveHiberFile(bool reserve);

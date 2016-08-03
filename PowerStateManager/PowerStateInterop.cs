@@ -40,10 +40,10 @@ namespace PowerStateManager
     internal class PowerStateInterop
     {
         [DllImport("PowerManagement.dll", EntryPoint = "?GetLastSleepTime@@YA_KXZ", CallingConvention = CallingConvention.Cdecl)]
-        public static extern long GetLastSleepTime();
+        public static extern int GetLastSleepTime();
 
         [DllImport("PowerManagement.dll", EntryPoint = "?GetLastWakeTime@@YA_KXZ", CallingConvention = CallingConvention.Cdecl)]
-        public static extern long GetLastWakeTime();
+        public static extern int GetLastWakeTime();
 
         [DllImport("PowerManagement.dll", EntryPoint = "?GetBatteryState@@YAXUSYSTEM_BATTERY_STATE@@@Z", CallingConvention = CallingConvention.Cdecl)]
         public static extern void GetBatteryState(out SYSTEM_BATTERY_STATE result);

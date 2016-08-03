@@ -23,7 +23,7 @@ namespace PowerStateTests
         public void GetBatteryStateTest()
         {
             SYSTEM_BATTERY_STATE state = new SYSTEM_BATTERY_STATE();
-            PowerStateInterop.GetBatteryState(out state);
+            PowerStateInterop.GetBatteryState(state);
             Console.WriteLine(state);
         }
 
@@ -31,7 +31,7 @@ namespace PowerStateTests
         public void GetPowerInformationTest()
         {
             SYSTEM_POWER_INFORMATION state = new SYSTEM_POWER_INFORMATION();
-            PowerStateInterop.GetPowerInformation(out state);
+            PowerStateInterop.GetPowerInformation(state);
             Console.WriteLine(state);
         }
 

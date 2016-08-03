@@ -1,0 +1,3 @@
+Please register PowerStateManager library with regAsm
+
+regasm 'currentfolderpath'/PowerStateManager.dll /tlb /codebase
